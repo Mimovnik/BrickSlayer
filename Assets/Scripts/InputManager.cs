@@ -3,21 +3,42 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] float moveMultiplier = 10f;
+    [SerializeField] float dashMultiplier = 5f;
     private Rigidbody2D rb;
+    private Vector2 movementInput = Vector2.zero;
+    private bool doDash = false;
 
-    public void Start()
+    public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void Update()
-    {
-        Vector3 delta = Mouse.current.delta.ReadValue();
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        mousePos.z = Camera.main.nearClipPlane;
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector3 newPos = rb.position;
-        newPos.x = worldPos.x;
-        rb.position = newPos;
+    public void move(InputAction.CallbackContext context)
+    {
+        movementInput = Vector2.zero;
+        if (context.performed)
+        {
+            movementInput = context.ReadValue<Vector2>();
+        }
+    }
+
+    public void dash(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            doDash = true;
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        if (doDash)
+        {
+            rb.AddForce(movementInput * dashMultiplier, ForceMode2D.Force);
+        }
+
+        rb.AddForce(movementInput * moveMultiplier, ForceMode2D.Force);
+        doDash = false;
     }
 }

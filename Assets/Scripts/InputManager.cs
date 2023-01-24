@@ -8,10 +8,12 @@ public class InputManager : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movementInput = Vector2.zero;
     private bool doDash = false;
+    private GameController gameController;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameController = GameObject.FindObjectOfType<GameController>();
     }
 
     public void move(InputAction.CallbackContext context)
@@ -20,6 +22,9 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             movementInput = context.ReadValue<Vector2>();
+            if(!gameController.isGameStarted()){
+                gameController.startGame();
+            }
         }
     }
 

@@ -3,33 +3,18 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] float moveMultiplier = 10f;
-    [SerializeField] float dashMultiplier = 5f;
-    private Rigidbody2D rb;
-    private Vector2 movementInput = Vector2.zero;
-    private bool doDash = false;
+    [SerializeField] private float moveMultiplier = 10f;
     private GameController gameController;
-    private Vector2 touchPosition;
-
-    private PlayerInput playerInput;
+    private Rigidbody2D rb;
+    private Vector2 inputPosition;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         gameController = GameObject.FindObjectOfType<GameController>();
-        playerInput = GetComponent<PlayerInput>();
-    }
-
-    public void move(InputAction.CallbackContext context)
-    {
-        movementInput = Vector2.zero;
-        if (context.performed)
+        if (gameController == null)
         {
-            movementInput = context.ReadValue<Vector2>();
-            if (!gameController.isGameStarted())
-            {
-                gameController.startGame();
-            }
+            throw new UnityException("Add GameController to this scene");
         }
     }
 
@@ -37,7 +22,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.performed)
         {
-            touchPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
+            inputPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
             if (!gameController.isGameStarted())
             {
                 gameController.startGame();
@@ -45,31 +30,10 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public void dash(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            doDash = true;
-        }
-    }
-
     public void FixedUpdate()
     {
-        if (playerInput.currentControlScheme == "Keyboard")
-        {
-            if (doDash)
-            {
-                rb.AddForce(movementInput * dashMultiplier, ForceMode2D.Force);
-            }
-
-            rb.AddForce(movementInput * moveMultiplier, ForceMode2D.Force);
-            doDash = false;
-        }
-        else if (playerInput.currentControlScheme == "Touch")
-        {
-            Vector2 newPos = rb.position;
-            newPos.x = touchPosition.x;
-            rb.position = newPos;
-        }
+        Vector2 newPos = rb.position;
+        newPos.x = inputPosition.x;
+        rb.position = newPos;
     }
 }

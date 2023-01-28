@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7084849605858648841}
   - component: {fileID: 7040737323415340757}
   - component: {fileID: 6708584789928645521}
-  - component: {fileID: 8553670009425176408}
+  - component: {fileID: 2501903378299340202}
   m_Layer: 0
-  m_Name: Cobble
+  m_Name: StoneBrick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
---- !u!114 &8553670009425176408
+--- !u!114 &2501903378299340202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7084849605858648842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa113582378d3458961df8f00cda746, type: 3}
+  m_Script: {fileID: 11500000, guid: 7694953a3ecc7fcf3a0beb7d8bf0c889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}
   willMove: 0
   durability: 2
+  velocityThreshold: 14
+  greaterToDestroy: 1

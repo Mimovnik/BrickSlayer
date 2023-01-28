@@ -4,7 +4,7 @@ public class Brick : MonoBehaviour
 {
     [SerializeField] private Vector2 initialForce;
     [SerializeField] private bool willMove = false;
-    [SerializeField] private int durability;
+    [SerializeField] private int durability = 1;
     private Rigidbody2D rb;
 
     public void Awake()
@@ -29,11 +29,11 @@ public class Brick : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Ball"))
         {
-            takeDamage();
+            takeDamage(collision.collider.attachedRigidbody);
         }
     }
 
-    private void takeDamage()
+    protected virtual void takeDamage(Rigidbody2D ball)
     {
         durability--;
         if (durability <= 0)

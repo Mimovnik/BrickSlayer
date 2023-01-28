@@ -31,8 +31,6 @@ public class InputManager : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Vector2 newPos = rb.position;
-        newPos.x = inputPosition.x;
-        rb.MovePosition(newPos);
+        rb.MovePosition(inputPosition);
     }
 }

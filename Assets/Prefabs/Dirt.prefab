@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6708584789928645521}
   - component: {fileID: 8553670009425176408}
   m_Layer: 0
-  m_Name: Brick
+  m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 344f3d346b92e2eab9c99b0e9e590404, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}
+  willMove: 0
+  durability: 1

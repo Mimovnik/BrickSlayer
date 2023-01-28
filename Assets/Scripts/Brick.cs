@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class BrickController : MonoBehaviour
+public class Brick : MonoBehaviour
 {
     [SerializeField] private Vector2 initialForce;
     [SerializeField] private bool willMove = false;
+    [SerializeField] private int durability;
     private Rigidbody2D rb;
 
     public void Awake()
@@ -11,8 +12,10 @@ public class BrickController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Start(){
-        if(!willMove){
+    public void Start()
+    {
+        if (!willMove)
+        {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
@@ -26,12 +29,16 @@ public class BrickController : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Ball"))
         {
-            destroyMe();
+            takeDamage();
         }
     }
 
-    private void destroyMe()
+    private void takeDamage()
     {
-        Destroy(gameObject);
+        durability--;
+        if (durability <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

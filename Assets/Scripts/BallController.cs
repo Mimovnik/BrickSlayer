@@ -4,7 +4,7 @@ public class BallController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    [SerializeField] private Vector2 force;
+    [SerializeField] private Vector2 initialForce;
     [SerializeField] private float minVelocity = 5f;
     [SerializeField] private float maxVelocity = 10f;
 
@@ -15,7 +15,7 @@ public class BallController : MonoBehaviour
 
     public void OnEnable()
     {
-        rb.AddForce(force);
+        rb.AddForce(initialForce);
     }
 
     public void FixedUpdate()

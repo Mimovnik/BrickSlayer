@@ -246,5 +246,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def8c1f87b5ecd548a592fad49efadde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveMultiplier: 100000
-  dashMultiplier: 3000000

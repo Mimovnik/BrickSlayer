@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7084849605858648840}
   - component: {fileID: 7084849605858648841}
   - component: {fileID: 7040737323415340757}
-  - component: {fileID: 6618348608530253363}
+  - component: {fileID: 6708584789928645521}
+  - component: {fileID: 8553670009425176408}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -112,7 +113,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6618348608530253363
+--- !u!50 &6708584789928645521
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084849605858648842}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 6657edf4803aaf2748ac31aef89962b3, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 6
+--- !u!114 &8553670009425176408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,8 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7084849605858648842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b61bbc3fda255a77ba817c01ffc5173, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aa113582378d3458961df8f00cda746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyingCollider: {fileID: 7040737323415340757}
-  destroyMeNotOthers: 1
+  initialForce: {x: 0, y: 0}

@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private float moveMultiplier = 10f;
     private GameController gameController;
     private Rigidbody2D rb;
     private Vector2 inputPosition;
@@ -34,6 +33,6 @@ public class InputManager : MonoBehaviour
     {
         Vector2 newPos = rb.position;
         newPos.x = inputPosition.x;
-        rb.position = newPos;
+        rb.MovePosition(newPos);
     }
 }

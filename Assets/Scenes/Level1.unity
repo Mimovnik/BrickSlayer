@@ -3562,6 +3562,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059569, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059572, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: moveDeadZone
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1838581418409059572, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
       propertyPath: gameController
       value: 
@@ -3691,6 +3699,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6717095903152861358, guid: a97023a8c22ee9c60833dbf22f0c2b86, type: 3}
+      propertyPath: force.y
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97023a8c22ee9c60833dbf22f0c2b86, type: 3}
 --- !u!1001 &7084849605644952883
@@ -3808,6 +3820,10 @@ PrefabInstance:
     - target: {fileID: 7891438723566612460, guid: 39a7739bd544e73748b9cb47a17c1110, type: 3}
       propertyPath: m_Name
       value: Edges
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891438723566612460, guid: 39a7739bd544e73748b9cb47a17c1110, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a7739bd544e73748b9cb47a17c1110, type: 3}

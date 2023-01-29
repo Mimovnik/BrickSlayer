@@ -148,4 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}
   willMove: 0
-  durability: 2
+  maxDurability: 2
+  brokenSprite: {fileID: 21300000, guid: 460114239bc8bd6cfbb46d22acff19d1, type: 3}

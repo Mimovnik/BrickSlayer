@@ -17,11 +17,10 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public void reposition(InputAction.CallbackContext context)
+    public void start(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            inputPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
             if (!gameController.isGameStarted())
             {
                 gameController.startGame();
@@ -29,8 +28,20 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void reposition(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            inputPosition = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        }
+    }
+
     public void FixedUpdate()
     {
+        if (!gameController.isGameStarted())
+        {
+            return;
+        }
         rb.MovePosition(inputPosition);
     }
 }

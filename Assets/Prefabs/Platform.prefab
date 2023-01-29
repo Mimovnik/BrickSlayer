@@ -185,38 +185,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1838581418409059572}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 47600200-ad50-4e87-b453-2b2a669f862f
-    m_ActionName: In-game/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1838581418409059572}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: dash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5816b7d2-bcf7-46e5-9efb-6fba693fb4a7
-    m_ActionName: In-game/Dash[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1838581418409059572}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
         m_MethodName: reposition
         m_Mode: 0
         m_Arguments:
@@ -229,8 +197,24 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2e4b516a-8321-44d8-96fe-a149d9d456f7
     m_ActionName: In-game/Position
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1838581418409059572}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: start
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 980151ff-6433-4292-b284-70a01db76db5
+    m_ActionName: In-game/Start[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: Touchscreen
   m_DefaultActionMap: In-game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

@@ -1664,6 +1664,30 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 2e4b516a-8321-44d8-96fe-a149d9d456f7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 980151ff-6433-4292-b284-70a01db76db5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: In-game/Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: In-game/Start[/Mouse/leftButton]
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
 --- !u!1 &876811351

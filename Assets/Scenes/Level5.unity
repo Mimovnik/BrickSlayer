@@ -2257,14 +2257,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
-    - target: {fileID: 1838581418409059572, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: moveDeadZone
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838581418409059572, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 1898712911}
     - target: {fileID: 1838581418409059574, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2313,26 +2305,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Touchscreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
-      value: 2e4b516a-8321-44d8-96fe-a149d9d456f7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
-      value: In-game/Position
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838581418409059595, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: reposition
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
 --- !u!1001 &6717095903840233188

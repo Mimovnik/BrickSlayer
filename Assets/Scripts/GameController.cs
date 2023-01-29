@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject tipScreen;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
-    [SerializeField] private TMP_Text brickCounter;
+    [SerializeField] private TMP_Text brickCounterDisplay;
     [SerializeField] private GameObject bricksParent;
     private bool gameStarted = false;
 
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
 
         int brickCount = bricksParent.transform.childCount;
 
-        brickCounter.SetText("Bricks left: " + brickCount);
+        brickCounterDisplay.SetText("Bricks left: " + brickCount);
 
         if(brickCount <= 0){
             endGame(true);

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7040737323415340757}
   - component: {fileID: 6708584789928645521}
   - component: {fileID: 8553670009425176408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,4 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}
   willMove: 0
-  durability: 1
+  maxDurability: 1
+  brokenSprite: {fileID: 0}

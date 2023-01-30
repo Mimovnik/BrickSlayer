@@ -28,8 +28,11 @@ public class InputManager : MonoBehaviour
             {
                 gameController.startGame();
             }
-            lastInputPosition = Vector2.zero;
-            inputPosition = Vector2.zero;
+            if (playerInput.currentControlScheme == "Touchscreen")
+            {
+                lastInputPosition = Vector2.zero;
+                inputPosition = Vector2.zero;
+            }
         }
     }
 

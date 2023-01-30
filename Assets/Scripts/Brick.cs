@@ -9,11 +9,13 @@ public class Brick : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private int durability;
+    private GameController gameController;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        gameController = GameObject.FindObjectOfType<GameController>();
     }
 
     public void Start()
@@ -47,6 +49,7 @@ public class Brick : MonoBehaviour
         }
         if (durability <= 0)
         {
+            gameController.decrementBrickCount();
             Destroy(gameObject);
         }
     }

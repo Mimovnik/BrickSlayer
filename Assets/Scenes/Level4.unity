@@ -2782,6 +2782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059572, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: sensitivity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1838581418409059574, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
       propertyPath: m_RootOrder
       value: 4

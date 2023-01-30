@@ -3,9 +3,12 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] private float sensitivity = 100f;
+    [SerializeField] private PlayerInput playerInput;
     private GameController gameController;
     private Rigidbody2D rb;
     private Vector2 inputPosition;
+    private Vector2 lastInputPosition;
 
     public void Awake()
     {
@@ -25,6 +28,8 @@ public class InputManager : MonoBehaviour
             {
                 gameController.startGame();
             }
+            lastInputPosition = Vector2.zero;
+            inputPosition = Vector2.zero;
         }
     }
 
@@ -40,6 +45,14 @@ public class InputManager : MonoBehaviour
     {
         if (!gameController.isGameStarted())
         {
+            return;
+        }
+        if (playerInput.currentControlScheme == "Touchscreen")
+        {
+            Vector2 newVelocity = inputPosition - lastInputPosition;
+            newVelocity *= sensitivity;
+            rb.velocity = newVelocity;
+            lastInputPosition = inputPosition;
             return;
         }
         rb.MovePosition(inputPosition);

@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}
   minVelocity: 5
-  maxVelocity: 15
+  maxVelocity: 10
 --- !u!82 &6717095903152861359
 AudioSource:
   m_ObjectHideFlags: 0

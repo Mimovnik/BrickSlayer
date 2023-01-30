@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def8c1f87b5ecd548a592fad49efadde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 150
+  playerInput: {fileID: 1838581418409059595}
 --- !u!114 &3711551639677594741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +245,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c32faf041e3ba2e99b2bbd96c8e336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchCounterDisplay: {fileID: 0}

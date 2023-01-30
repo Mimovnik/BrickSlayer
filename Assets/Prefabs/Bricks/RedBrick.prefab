@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}
   willMove: 0
-  durability: 1
-  velocityThreshold: 14
+  maxDurability: 1
+  brokenSprite: {fileID: 0}
+  velocityThreshold: 9
   greaterToDestroy: 1

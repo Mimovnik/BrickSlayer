@@ -2100,6 +2100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1505805531951199485, guid: 0add73dd9154e85daa6d5d4729f3ef9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0add73dd9154e85daa6d5d4729f3ef9d, type: 3}
 --- !u!114 &1505805531888391712 stripped

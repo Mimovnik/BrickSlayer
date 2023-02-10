@@ -1260,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2501903378299340202, guid: c7d802e5d221f591a9d1a6c83d1701e9, type: 3}
       propertyPath: initialForce.x
-      value: 400
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 7084849605858648840, guid: c7d802e5d221f591a9d1a6c83d1701e9, type: 3}
       propertyPath: m_RootOrder
@@ -1860,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916490716773987252, guid: c78edca8645d0c85ca88a77d4b9a0dbf, type: 3}
       propertyPath: initialForce.x
-      value: -400
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 7084849605858648840, guid: c78edca8645d0c85ca88a77d4b9a0dbf, type: 3}
       propertyPath: m_RootOrder
@@ -2197,6 +2197,10 @@ PrefabInstance:
     - target: {fileID: 1838581418409059569, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838581418409059573, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1838581418409059574, guid: ac384db5aa9ca024badd6e78d8d51390, type: 3}
       propertyPath: m_RootOrder

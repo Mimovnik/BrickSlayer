@@ -56,8 +56,8 @@ public class InputManager : MonoBehaviour
             newVelocity *= sensitivity;
             rb.velocity = newVelocity;
             lastInputPosition = inputPosition;
-            return;
+        }else{
+            rb.MovePosition(inputPosition);
         }
-        rb.MovePosition(inputPosition);
     }
 }

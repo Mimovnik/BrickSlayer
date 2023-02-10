@@ -6,7 +6,7 @@ public class Brick : MonoBehaviour
     [SerializeField] private bool willMove = false;
     [SerializeField] private int maxDurability = 1;
     [SerializeField] private Sprite brokenSprite;
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private int durability;
     private GameController gameController;

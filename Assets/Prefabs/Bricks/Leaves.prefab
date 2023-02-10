@@ -150,5 +150,5 @@ MonoBehaviour:
   willMove: 0
   maxDurability: 1
   brokenSprite: {fileID: 0}
-  velocityThreshold: 6
+  velocityThreshold: 5.5
   greaterToDestroy: 0

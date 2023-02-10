@@ -2,36 +2,26 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class GameController : MonoBehaviour
+public class GameController : Part
 {
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject tipScreen;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
-    [SerializeField] private TMP_Text brickCounterDisplay;
     [SerializeField] private Transform bricks;
-    [SerializeField] private float firstRowHeight;
-    private Transform firstRow;
-    private bool gameStarted = false;
-    private int brickCount;
-    private bool rowMovingDown = false;
 
-    public void Awake()
+    public new void Awake()
     {
+        base.Awake();
         Time.timeScale = 0f;
         tipScreen.SetActive(true);
         winScreen.SetActive(false);
         loseScreen.SetActive(false);
     }
 
-    public void Start()
-    {
-        brickCount = GameObject.FindGameObjectsWithTag("Brick").Length;
-    }
-
     public void startGame()
     {
-        gameStarted = true;
+        root.model.gameModel.gameStarted = true;
         Time.timeScale = 1f;
         tipScreen.SetActive(false);
     }
@@ -51,7 +41,7 @@ public class GameController : MonoBehaviour
 
     private bool isFirstRowCleared()
     {
-        return firstRow.transform.childCount <= 0;
+        return root.model.gameModel.firstRow.transform.childCount <= 0;
     }
 
     private void moveBricksDown(float distance)
@@ -70,20 +60,19 @@ public class GameController : MonoBehaviour
         {
             return;
         }
-        brickCounterDisplay.SetText("Bricks left: " + brickCount);
 
-        if (firstRow == null)
+        if (root.model.gameModel.firstRow == null)
         {
-            firstRow = bricks.GetChild(bricks.childCount - 1);
+            root.model.gameModel.firstRow = bricks.GetChild(bricks.childCount - 1);
         }
 
         if (isFirstRowCleared())
         {
-            Destroy(firstRow.gameObject);
-            rowMovingDown = true;
+            Destroy(root.model.gameModel.firstRow.gameObject);
+            root.model.gameModel.rowMovingDown = true;
         }
 
-        if (brickCount <= 0)
+        if (root.model.gameModel.brickCount <= 0)
         {
             endGame(true);
         }
@@ -100,24 +89,24 @@ public class GameController : MonoBehaviour
         {
             return;
         }
-        
-        if (rowMovingDown)
+
+        if (root.model.gameModel.rowMovingDown)
         {
             moveBricksDown(0.01f);
         }
-        if (firstRow.position.y <= firstRowHeight)
+        if (root.model.gameModel.firstRow.position.y <= root.model.gameModel.firstRowHeight)
         {
-            rowMovingDown = false;
+            root.model.gameModel.rowMovingDown = false;
         }
     }
 
     public void decrementBrickCount()
     {
-        brickCount--;
+        root.model.gameModel.brickCount--;
     }
 
     public bool isGameStarted()
     {
-        return gameStarted;
+        return root.model.gameModel.gameStarted;
     }
 }

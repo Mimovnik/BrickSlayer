@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 1505805531547883525}
   - component: {fileID: 1505805531547883523}
   - component: {fileID: 1505805531547883524}
+  - component: {fileID: 8842688119155740805}
   m_Layer: 5
   m_Name: BrickLeftText
   m_TagString: Untagged
@@ -466,6 +467,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8842688119155740805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505805531547883526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa9471b16a867fa8b24c073d397273f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1505805531547883524}
 --- !u!1 &1505805531755971551
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +878,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1710,6 +1724,7 @@ GameObject:
   - component: {fileID: 3845258548201230161}
   - component: {fileID: 3843230923583668710}
   - component: {fileID: 8886429216388584310}
+  - component: {fileID: 1983234017411461341}
   m_Layer: 5
   m_Name: PlatformTouches
   m_TagString: Untagged
@@ -1834,3 +1849,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1983234017411461341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064721111877314450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7983410af4f2466fa32f9eb93095bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8886429216388584310}

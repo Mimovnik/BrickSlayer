@@ -49,7 +49,10 @@ public class Brick : MonoBehaviour
         }
         if (durability <= 0)
         {
-            gameController.decrementBrickCount();
+            if (gameController != null)
+            {
+                gameController.decrementBrickCount();
+            }
             Destroy(gameObject);
         }
     }

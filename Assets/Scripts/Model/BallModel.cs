@@ -16,7 +16,7 @@ public class BallModel : Part
     public void OnCollisionEnter2D(Collision2D collision)
     {
         // (Should set an event)
-        root.view.ballView.audioSource.Play();
+        root.view.ballView.playSound();
     }
 
     public void FixedUpdate()

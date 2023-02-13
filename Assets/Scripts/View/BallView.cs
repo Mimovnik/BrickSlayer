@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallView : Part
 {
-    public AudioSource audioSource { get; private set; }
+    private AudioSource audioSource;
 
     public new void Awake()
     {
@@ -21,5 +21,10 @@ public class BallView : Part
             return;
         }
         transform.position = root.model.ballModel.transform.position;
+    }
+
+    public void playSound()
+    {
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }

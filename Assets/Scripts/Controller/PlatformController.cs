@@ -3,18 +3,26 @@ using UnityEngine.InputSystem;
 
 public class PlatformController : Part
 {
+    [SerializeField] private float sensitivity = 100f;
+    private PlayerInput playerInput;
     private Vector2 inputPosition;
     private Vector2 lastInputPosition;
+
+    public new void Awake(){
+        base.Awake();
+
+        playerInput = GetComponent<PlayerInput>();
+    }
 
     public void start(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if (!root.model.gameModel.gameStarted)
+            if (root.model.gameModel.status == GameModel.GameStatus.PAUSED)
             {
-                root.controller.gameController.startGame();
+                root.model.gameModel.startGame();
             }
-            if (root.model.platformModel.playerInput.currentControlScheme == "Touchscreen")
+            if (playerInput.currentControlScheme == "Touchscreen")
             {
                 lastInputPosition = Vector2.zero;
                 inputPosition = Vector2.zero;
@@ -30,27 +38,22 @@ public class PlatformController : Part
         }
     }
 
-    public void OnCollisionWithBall()
-    {
-        root.model.platformModel.ballTouches++;
-    }
-
     public void FixedUpdate()
     {
-        if (!root.model.gameModel.gameStarted)
+        if (root.model.gameModel.status != GameModel.GameStatus.RUNNING)
         {
             return;
         }
-        if (root.model.platformModel.playerInput.currentControlScheme == "Touchscreen")
+        if (playerInput.currentControlScheme == "Touchscreen")
         {
             Vector2 newVelocity = inputPosition - lastInputPosition;
-            newVelocity *= root.model.platformModel.sensitivity;
-            root.view.platformView.rb.velocity = newVelocity;
+            newVelocity *= sensitivity;
+            root.model.platformModel.rb.velocity = newVelocity;
             lastInputPosition = inputPosition;
         }
         else
         {
-            root.view.platformView.rb.MovePosition(inputPosition);
+            root.model.platformModel.rb.MovePosition(inputPosition);
         }
     }
 }

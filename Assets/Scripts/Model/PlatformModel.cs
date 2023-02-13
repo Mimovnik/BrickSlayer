@@ -1,16 +1,23 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlatformModel : Part
 {
-    [SerializeField] private float _sensitivity = 100f;
-    [SerializeField] private float _mass = 100f;
-    [SerializeField] private PlayerInput _playerInput;
-    public int ballTouches = 0;
+    public int ballTouches { get; private set; } = 0;
+    public Rigidbody2D rb { get; private set; }
 
-    public float sensitivity => _sensitivity;
+    public new void Awake()
+    {
+        base.Awake();
 
-    public float mass => _mass;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-    public PlayerInput playerInput => _playerInput;
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Ball"))
+        {
+            ballTouches++;
+        }
+    }
+
 }

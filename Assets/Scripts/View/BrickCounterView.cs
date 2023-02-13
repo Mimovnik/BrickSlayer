@@ -11,6 +11,6 @@ public class BrickCounterView : Part
         {
             return;
         }
-        text.SetText("Bricks left: " + root.model.gameModel.brickCount);
+        text.SetText("Bricks left: " + root.model.brickContainer.bricksLeft);
     }
 }

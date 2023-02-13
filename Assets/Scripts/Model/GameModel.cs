@@ -2,16 +2,34 @@ using UnityEngine;
 
 public class GameModel : Part
 {
-    [SerializeField] private float _firstRowHeight;
-    public bool gameStarted = false;
-    public int brickCount;
-    public bool rowMovingDown = false;
-    public Transform firstRow;
-
-    public float firstRowHeight => _firstRowHeight;
-
-    public void Start()
+    public enum GameStatus
     {
-        brickCount = GameObject.FindGameObjectsWithTag("Brick").Length;
+        PAUSED,
+        RUNNING,
+        WON,
+        LOST
     }
+    public GameStatus status;
+
+
+    public new void Awake()
+    {
+        base.Awake();
+
+        Time.timeScale = 0f;
+        status = GameStatus.PAUSED;
+    }
+
+    public void startGame()
+    {
+        status = GameStatus.RUNNING;
+        Time.timeScale = 1f;
+    }
+
+    public void endGame(GameStatus status)
+    {
+        Time.timeScale = 0f;
+        this.status = status;
+    }
+
 }

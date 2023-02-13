@@ -1,21 +1,26 @@
 using UnityEngine;
 
-public class Brick : MonoBehaviour
+public class Brick : Part
 {
     [SerializeField] private Vector2 initialForce;
     [SerializeField] private bool willMove = false;
-    [SerializeField] private int maxDurability = 1;
-    [SerializeField] private Sprite brokenSprite;
+    [SerializeField] public int maxDurability = 1;
+    [SerializeField] public BrickType type;
     protected Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
-    private int durability;
-    private GameController gameController;
+    public int durability { get; private set; }
+    public enum BrickType{
+        DIRT,
+        STONE,
+        RED_BRICK,
+        STONE_BRICK,
+        LEAF
+    }
 
-    public void Awake()
+    public new void Awake()
     {
+        base.Awake();
+
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        gameController = GameObject.FindObjectOfType<GameController>();
     }
 
     public void Start()
@@ -25,10 +30,6 @@ public class Brick : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-    }
-
-    public void OnEnable()
-    {
         rb.AddForce(initialForce);
     }
 
@@ -43,17 +44,10 @@ public class Brick : MonoBehaviour
     protected virtual void takeDamage(Rigidbody2D ball)
     {
         durability--;
-        if (maxDurability > 1)
-        {
-            spriteRenderer.sprite = brokenSprite;
-        }
         if (durability <= 0)
         {
-            if (gameController != null)
-            {
-                gameController.decrementBrickCount();
-            }
-            Destroy(gameObject);
+            root.model.brickContainer.decrementBrickCount();
         }
+        Destroy(gameObject);
     }
 }

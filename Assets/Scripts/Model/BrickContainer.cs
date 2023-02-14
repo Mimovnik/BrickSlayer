@@ -35,16 +35,6 @@ public class BrickContainer : Part
             Destroy(firstRow.gameObject);
             rowMovingDown = true;
         }
-
-        if (bricksLeft <= 0)
-        {
-            root.model.gameModel.endGame(GameModel.GameStatus.WON);
-        }
-
-        if (root.model.ballModel == null)
-        {
-            root.model.gameModel.endGame(GameModel.GameStatus.LOST);
-        }
     }
 
     private Row getFirstRow()

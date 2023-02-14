@@ -18,7 +18,7 @@ public class PlatformController : Part
     {
         if (context.performed)
         {
-            if (root.model.gameModel.status == GameModel.GameStatus.PAUSED)
+            if (root.model.gameModel.status == GameModel.GameStatus.NOTSTARTED)
             {
                 root.model.gameModel.startGame();
             }

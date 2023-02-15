@@ -20,7 +20,7 @@ public class PlatformController : Part
         {
             if (root.model.gameModel.status == GameModel.GameStatus.NOTSTARTED)
             {
-                root.model.gameModel.startGame();
+                root.controller.gameController.startGame();
             }
             if (playerInput.currentControlScheme == "Touchscreen")
             {

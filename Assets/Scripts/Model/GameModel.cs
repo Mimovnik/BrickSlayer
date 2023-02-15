@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GameModel : Part
 {
+    [SerializeField] private int _currentLevel;
+
     public enum GameStatus
     {
         NOTSTARTED,
@@ -12,6 +14,8 @@ public class GameModel : Part
     }
     public GameStatus status;
 
+    public int currentLevel => _currentLevel;
+
     public new void Awake()
     {
         base.Awake();
@@ -20,34 +24,18 @@ public class GameModel : Part
         status = GameStatus.NOTSTARTED;
     }
 
-    public void startGame()
-    {
-        status = GameStatus.RUNNING;
-        Time.timeScale = 1f;
-    }
-
-    public void pauseGame()
-    {
-        status = GameStatus.PAUSED;
-        Time.timeScale = 0f;
-    }
-
-    public void endGame(GameStatus status)
-    {
-        Time.timeScale = 0f;
-        this.status = status;
-    }
-
     public void Update()
     {
         if (root.model.brickContainer.bricksLeft <= 0)
         {
-            endGame(GameModel.GameStatus.WON);
+            // Should expose an event
+            root.controller.gameController.endGame(GameModel.GameStatus.WON);
         }
 
         if (root.model.ballModel == null)
         {
-            endGame(GameModel.GameStatus.LOST);
+            // Should expose an event
+            root.controller.gameController.endGame(GameModel.GameStatus.LOST);
         }
     }
 }

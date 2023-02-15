@@ -15,7 +15,7 @@ public class BallModel : Part
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        // (Should set an event)
+        // Should expose an event
         root.view.ballView.playSound();
     }
 

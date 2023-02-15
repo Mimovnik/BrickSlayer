@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7084849605858648840}
   - component: {fileID: 7040737323415340757}
   - component: {fileID: 6708584789928645521}
-  - component: {fileID: 4916490716773987252}
+  - component: {fileID: 63744286641649888}
   m_Layer: 10
   m_Name: Leaf
   m_TagString: Brick
@@ -81,7 +81,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
---- !u!114 &4916490716773987252
+--- !u!114 &63744286641649888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7084849605858648842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7694953a3ecc7fcf3a0beb7d8bf0c889, type: 3}
+  m_Script: {fileID: 11500000, guid: 39f77373832904fd6bcd3dabfed78d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initialForce: {x: 0, y: 0}

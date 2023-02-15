@@ -14,10 +14,8 @@ public class BrickViews : Part
     [SerializeField] private Sprite stoneBrickSprite;
     [SerializeField] private Sprite stoneBrickBrokenSprite;
 
-    public new void Awake()
+    public void Start()
     {
-        base.Awake();
-
         foreach (Brick brick in root.model.brickContainer.getAllBricks())
         {
             Sprite brokenSprite;

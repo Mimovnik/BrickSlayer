@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AIPlatformController : Part 
+public class AIPlatformController : PlatformController 
 {
     public void FixedUpdate()
     {

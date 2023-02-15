@@ -8,7 +8,8 @@ public class Brick : Part
     [SerializeField] public BrickType type;
     protected Rigidbody2D rb;
     public int durability { get; private set; }
-    public enum BrickType{
+    public enum BrickType
+    {
         DIRT,
         STONE,
         RED_BRICK,
@@ -47,7 +48,7 @@ public class Brick : Part
         if (durability <= 0)
         {
             root.model.brickContainer.decrementBrickCount();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

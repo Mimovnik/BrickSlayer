@@ -7,10 +7,16 @@ public class BallModel : Part
     [SerializeField] private Vector2 _initialForce;
     public Rigidbody2D rb { get; private set; }
 
-    public new void Awake(){
+    public new void Awake()
+    {
         base.Awake();
 
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Start()
+    {
+        rb.AddForce(initialForce);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

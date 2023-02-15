@@ -20,8 +20,10 @@ public class GameModel : Part
     {
         base.Awake();
 
-        Time.timeScale = 0f;
-        status = GameStatus.NOTSTARTED;
+        if (status == GameStatus.NOTSTARTED)
+        {
+            Time.timeScale = 0f;
+        }
     }
 
     public void Update()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class GameModel : Part
 {
@@ -13,12 +14,18 @@ public class GameModel : Part
         LOST
     }
     public GameStatus status;
+    private GameStatus previousStatus;
+
+    public delegate void GameStatusEventHandler(object sender, GameStatusEventArgs args);
+    public event GameStatusEventHandler statusChange;
 
     public int currentLevel => _currentLevel;
 
     public new void Awake()
     {
         base.Awake();
+
+        previousStatus = status;
 
         if (status == GameStatus.NOTSTARTED)
         {
@@ -28,16 +35,26 @@ public class GameModel : Part
 
     public void Update()
     {
-        if (root.model.brickContainer.bricksLeft <= 0)
+        if (root.model.brickContainer.bricksLeft <= 0 && status != GameStatus.WON)
         {
-            // Should expose an event
-            root.controller.gameController.endGame(GameModel.GameStatus.WON);
+            status = GameStatus.WON;
         }
 
-        if (root.model.ballModel == null)
+        if (root.model.ballModel == null && status != GameStatus.LOST)
         {
-            // Should expose an event
-            root.controller.gameController.endGame(GameModel.GameStatus.LOST);
+            status = GameStatus.LOST;
         }
+
+        if (previousStatus != status)
+        {
+            statusChange?.Invoke(this, new GameStatusEventArgs(status));
+        }
+        previousStatus = status;
     }
+}
+
+public class GameStatusEventArgs
+{
+    public GameModel.GameStatus status { get; }
+    public GameStatusEventArgs(GameModel.GameStatus status) { this.status = status; }
 }

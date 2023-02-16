@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class BallModel : Part
 {
@@ -7,6 +8,7 @@ public class BallModel : Part
     [SerializeField] private Vector2 _initialForce;
     public Rigidbody2D rb { get; private set; }
     public Vector2 enterVelocity { get; private set; }
+    public event EventHandler collisionEnter;
 
     public new void Awake()
     {
@@ -22,8 +24,7 @@ public class BallModel : Part
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        // Should expose an event
-        root.view.ballView.playSound();
+        collisionEnter?.Invoke(this, EventArgs.Empty);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)

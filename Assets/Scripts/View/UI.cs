@@ -16,11 +16,12 @@ public class UI : Part
         winScreen.SetActive(false);
         loseScreen.SetActive(false);
         pauseScreen.SetActive(false);
+        root.model.gameModel.statusChange += statusChangeListener;
     }
 
-    public void Update()
+    public void statusChangeListener(object sender, GameStatusEventArgs args)
     {
-        switch (root.model.gameModel.status)
+        switch (args.status)
         {
             case GameModel.GameStatus.NOTSTARTED:
                 tipScreen.SetActive(true);

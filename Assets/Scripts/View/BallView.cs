@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,8 @@ public class BallView : Part
         base.Awake();
 
         audioSource = GetComponent<AudioSource>();
+
+        root.model.ballModel.collisionEnter += playSound;
     }
 
     public void Update()
@@ -23,7 +25,7 @@ public class BallView : Part
         transform.position = root.model.ballModel.transform.position;
     }
 
-    public void playSound()
+    public void playSound(object sender, EventArgs args)
     {
         audioSource.PlayOneShot(audioSource.clip);
     }

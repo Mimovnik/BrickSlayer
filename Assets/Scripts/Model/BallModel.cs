@@ -6,6 +6,7 @@ public class BallModel : Part
     [SerializeField] private float _maxVelocity = 10f;
     [SerializeField] private Vector2 _initialForce;
     public Rigidbody2D rb { get; private set; }
+    public Vector2 enterVelocity { get; private set; }
 
     public new void Awake()
     {
@@ -23,6 +24,11 @@ public class BallModel : Part
     {
         // Should expose an event
         root.view.ballView.playSound();
+    }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        enterVelocity = rb.velocity;
     }
 
     public void FixedUpdate()

@@ -1,8 +1,15 @@
 using UnityEngine;
 
-public class DestroyEverythingOnTouch : MonoBehaviour
+public class DestroyingEdge : Part
 {
-    [SerializeField] private Collider2D destroyingCollider;
+    private Collider2D destroyingCollider;
+
+    public new void Awake()
+    {
+        base.Awake();
+
+        destroyingCollider = GetComponent<EdgeCollider2D>();
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
